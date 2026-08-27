@@ -67,6 +67,12 @@
     summary::-webkit-details-marker { display: none; }
     summary::after { content: "+"; flex: 0 0 auto; color: var(--blue); font-family: Arial, sans-serif; font-size: 1.35rem; font-weight: 300; line-height: 1; }
     details[open] summary::after { content: "+"; }
+    #auto > details > summary { background: var(--dark-blue); color: var(--white); }
+    #auto > details > summary::after { color: var(--green); }
+    #colectivos > details > summary { background: var(--blue); color: var(--white); }
+    #colectivos > details > summary::after { color: var(--white); }
+    #tren > details > summary { background: var(--green); color: var(--dark-blue); }
+    #tren > details > summary::after { color: var(--dark-blue); }
     .details-content { padding: 0 20px 22px; border-top: 1px solid var(--line); }
     .details-content h3 { margin-top: 22px; color: var(--dark-blue); font-size: 1.1rem; }
     .details-content p { margin: 9px 0; color: var(--muted); }
