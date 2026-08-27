@@ -39,8 +39,11 @@
     main { padding: 25px 0 54px; }
     .quick-nav { position: sticky; top: 0; z-index: 2; display: flex; gap: 8px; overflow-x: auto; padding: 10px 0; background: var(--white); scrollbar-width: none; }
     .quick-nav::-webkit-scrollbar { display: none; }
-    .quick-nav a { flex: 0 0 auto; padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--dark-blue); font-size: .88rem; font-weight: 800; text-decoration: none; }
-    .quick-nav a:first-child { border-color: var(--green); background: var(--green); }
+    .quick-nav a { flex: 0 0 auto; min-height: 44px; display: inline-flex; align-items: center; padding: 9px 15px; border: 1px solid transparent; border-radius: 999px; font-size: .88rem; font-weight: 800; text-decoration: none; transition: transform .18s ease, filter .18s ease; }
+    .quick-nav a:hover, .quick-nav a:focus-visible { transform: translateY(-1px); filter: brightness(.96); }
+    .quick-nav .auto-nav { background: var(--dark-blue); color: var(--white); }
+    .quick-nav .collective-nav { background: var(--blue); color: var(--white); }
+    .quick-nav .train-nav { background: var(--green); color: var(--dark-blue); }
     .intro { margin: 14px 0 20px; color: var(--muted); }
     .transport-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
     .transport-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 170px; padding: 20px; border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
@@ -53,9 +56,11 @@
     .transport-card.auto-card p, .transport-card.collective-card p { color: rgba(255, 255, 255, .9); }
     .transport-card.train-card p { color: #304b2d; }
     .transport-card a { margin-top: 15px; color: var(--blue); font-weight: 850; text-decoration: none; }
-    .transport-card.auto-card a { color: var(--green); }
-    .transport-card.collective-card a { color: var(--white); }
-    .transport-card.train-card a { color: var(--dark-blue); }
+    .transport-card > a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 18px; padding: 10px 14px; border-radius: 10px; font-weight: 850; transition: transform .18s ease, filter .18s ease; }
+    .transport-card > a:hover, .transport-card > a:focus-visible { transform: translateY(-1px); filter: brightness(.96); }
+    .transport-card.auto-card > a { background: var(--green); color: var(--dark-blue); }
+    .transport-card.collective-card > a { background: var(--dark-blue); color: var(--white); }
+    .transport-card.train-card > a { background: var(--dark-blue); color: var(--white); }
     .route-section { scroll-margin-top: 62px; }
     details { margin-top: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); overflow: hidden; }
     summary { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 20px; cursor: pointer; list-style: none; font-weight: 850; }
@@ -113,9 +118,9 @@
   <main>
     <div class="wrap">
       <nav class="quick-nav" aria-label="Medios de transporte">
-        <a href="#auto">Automóvil</a>
-        <a href="#colectivos">Línea de colectivos</a>
-        <a href="#tren">Tren</a>
+        <a class="auto-nav" href="#auto">Automóvil</a>
+        <a class="collective-nav" href="#colectivos">Línea de colectivos</a>
+        <a class="train-nav" href="#tren">Tren</a>
       </nav>
 
       <p class="intro">Seleccioná el medio que vas a utilizar para consultar únicamente la información que necesitás.</p>
